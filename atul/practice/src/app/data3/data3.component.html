@@ -1,0 +1,18 @@
+<p>data3 works!</p>
+
+<div class="jumbotron" style="background-color: royalblue;">
+    <h4>Using Input Elemnet binding</h4>
+    <input type="text" class="form-control" (input)="addserver($event)"  /><br>
+    <button class="btn  btn-danger"  [disabled]="!allowserver" >  Click me</button>
+    <p>{{servername}}</p>
+</div>
+
+
+<div class="jumbotron" style="background-color: saddlebrown;">
+        <h4>Using ng model</h4>
+
+        <input type="text" class="form-control"  [(ngModel)]="username"/><br>
+        <button class="btn btn-info" (click)="showdata();">cehckIn</button>
+        <p>{{ username}}</p>
+        <h1>{{ "your lis is "+listdata}}</h1>
+</div>

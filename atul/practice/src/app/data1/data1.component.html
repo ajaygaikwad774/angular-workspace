@@ -1,0 +1,28 @@
+
+<style>
+    .jumbotron{
+
+            background-color: rgb(50, 128, 216) ;
+    }
+</style>
+
+<h1>This is data1 component</h1>
+
+<h2>String interpolation</h2>
+
+<div class="jumbotron">
+
+    <h2>String interpolation</h2>
+    <h1>This is id {{ dataid }} and status is  {{ datastatus }}</h1>
+
+    <h1>Property Binding</h1>
+
+    <button class="btn btn-danger" [disabled]='!allowserver'  (click)="createServer()"  >Add Server</button>
+    <p>{{ serverStatus}}</p>
+
+    <h1>Input Elemwnt Binding</h1>
+    <input class="form form-control " type="text"  /><br>
+    <button class="btn btn-success"  [disabled]="" > Save</button>
+    
+</div>
+

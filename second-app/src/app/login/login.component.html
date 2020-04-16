@@ -1,0 +1,19 @@
+
+<div class="container"> 
+
+<h3 *ngIf="!validLogin" style="color: red;"> {{message}}</h3>
+UserName <input type="text" name="username" [(ngModel)]="username" /> <br>
+Password <input type="text" name="password" [(ngModel)]="password" /> <br>
+
+<button (click)=handleLogin() > Login </button>
+
+<h3 *ngIf="validLogin" style="color: green;"> {{message}}</h3>
+
+<hr />
+
+<label> UserName </label>
+<input type="text" class="form-control" [(ngModel)] = "uname">
+<p>{{uname}}</p>
+<button class="btn btn-primary" [disabled] = "uname===''" (click)="uname=''" >Reset User</button>
+
+</div>

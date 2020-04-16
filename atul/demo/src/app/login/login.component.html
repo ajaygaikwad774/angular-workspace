@@ -1,0 +1,22 @@
+<p>login works!</p>
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <p *ngIf="!loginstatus">{{massage}}</p>
+                
+                <label for="username">username</label>
+                <input type="text" class="form-control" name="username" [(ngModel)]="username"/>
+                <label for="password">password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="password"/>
+                <br>
+                <input type="button" class="btn btn-info" value="login" (click)="run()">
+
+                
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+
+<br/>
+
+<div class="container">
+<p> Using Input Property </p>
+    <label> Server Name</label>
+    <input type="text" class="form-control" (input)="onUpdateServer($event)" />
+    <br />
+        <button class="btn btn-info" [disabled]="!allowNewServer" (click)="onCreateServer()" >Add Server</button>
+         <p>{{serverCreationStatus}}</p>
+        <p>{{allowNewServer}}</p>
+        <p [innerHtml] = "allowNewServer"></p>
+</div>
+
+<div class="container">
+<p> Using NgModel </p>
+    <label> Server Name</label>
+    <input type="text" class="form-control" [(ngModel)] = "serverName" /> <br />
+    <button class="btn btn-info" [disabled]="serverName === ''" (click)="onCreateServer()" >Add Server</button>
+    <p *ngIf="serverCreateStatus else noServer">  {{ "Server was created, server name is "+serverName }} </p>
+    <ng-template #noServer>
+        <p> No server created </p>
+    </ng-template>
+    <p> {{"List of servers been added "+server}} </p>
+</div>
+
+<div class="container">
+    <p *ngIf="!status">https://developer.mozilla.org/docs/Web/HTML/Element/button</p>
+    <button class="btn btn-primary" (click)="status = !status" > show/hide </button>
+</div>

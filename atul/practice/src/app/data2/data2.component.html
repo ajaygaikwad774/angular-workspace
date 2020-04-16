@@ -1,0 +1,35 @@
+<div class="container">
+
+    <p>Using Input handling</p>
+    <input type="text" class="form  form-control" (input)="handleEvent($event)" /> <br/>
+    <button class="btn btn-danger"  [disabled]="!allowserver" (click)="creatfunction()">Add Server </button> 
+    <p>{{ serverStatus }}</p>
+    
+    </div>
+    
+    
+    <div class="container">
+    
+        <p>Using NgModel </p>
+        <input type="text" class="form  form-control" [(ngModel)] = "servername" /> <br/>
+        <button class="btn btn-danger"  [disabled]="servername==''" (click)="createServer()">Add Server </button> 
+        <p>{{ serverStatus }}</p>
+        <p> {{"You have added servers "+serverList}}</p>
+       <p *ngIf="!status"> This is bala prasad and check my and you can try!  </p> 
+       
+       <button class="btn btn-info" (click) = "status = !status"> Hide/show </button>
+       
+    </div>
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

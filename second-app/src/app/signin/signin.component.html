@@ -1,0 +1,21 @@
+<pre>
+    <h3 *ngIf="!validLogin" style="color:blueviolet">{{msg}}</h3>
+Username :<input type="text" name="uname" [(ngModel)]="uname" /><br>
+password : <input type="text" name="password" [(ngModel)]="password"/><br>
+    <h3 *ngIf="validLogin" style="color: crimson;">{{msg}}</h3>
+<button (click)=handleLogin()>Submit</button> 
+</pre>
+
+
+Enter marks:::<input type="number" [(ngModel)]="mark">
+<h2 *ngIf="mark > 50; else elseBlock">you are passed</h2>
+<ng-template #elseBlock>
+    <h2>failed</h2>
+</ng-template>
+
+
+<h3>For Loop Example</h3>
+<select [(ngModel)]="selectf">
+    <option *ngFor="let fruit of fruits" [value]="fruit">{{fruit}}</option>
+</select>
+

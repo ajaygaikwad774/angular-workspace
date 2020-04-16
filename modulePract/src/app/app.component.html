@@ -1,0 +1,72 @@
+<div style="text-align: center;">
+  <h1> welcome {{ title }}</h1>
+</div>
+
+
+<div>
+  <select (change)="onSelect($event)">
+    <option selected disabled>please select </option>
+    <option value="apple">Apple</option>
+    <option value="orange">Orange</option>
+    <option value="mango">Mango</option>
+    <option value="grapes">Grapes</option>
+  </select>
+</div>
+
+<div [ngSwitch]="choose">
+  <div *ngSwitchCase="'apple'">You have selected Apple</div>
+  <div *ngSwitchCase="'orange'">You have selected Orange</div>
+  <div *ngSwitchCase="'mango'">You have selected Mango</div>
+  <div *ngSwitchCase="'grapes'">You have selected Grapes</div>
+  <div *ngSwitchDefault>Invalid Option</div>
+</div>
+
+<br />
+
+<div>
+  <table [attr.border]="bdr">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">currency</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Course</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of student; trackBy:trackbyid ">
+        <td>{{s.id}}</td>
+        <td>{{s.name | uppercase}}</td>
+        <td>{{s.age | currency:"Rs":true:'1.3-3'}}</td>
+        <td>{{s.gender}}</td>
+        <td>{{s.course}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br />
+
+<button type="button" (click)="getmoreStudents()"> Get more students </button>
+
+<br />
+
+<ul *ngFor="let c of country">
+  <li>{{c.name}}</li>
+  <ul *ngFor="let p of c.person">
+    <li [ngStyle]="{'color':getColor(c.name)}">{{p.name}}</li>
+  </ul>
+</ul>
+
+<br/>
+
+<div>
+   <h4 [innerHtml]="name"></h4>
+   <input type="text" [value]="name" (input)="name=$event.target.value" />
+   {{"Your name is "+name}} 
+   <br/>
+   <br/>
+   <img [src]="'https://angular.io/assets/images/logos/angular/angular.svg'" [height]="200" />
+</div>
+<router-outlet></router-outlet>
